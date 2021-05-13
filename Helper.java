@@ -82,9 +82,20 @@ public class Helper {
 		return ausgabe;
 	}
 	
-	public boolean isPrime(int zahl) {
-		boolean ausgabe = false;
-		
-		return ausgabe;
+	public static boolean isPrime(int zahl)
+	{
+		if(zahl>=2) {
+			if(zahl==2) {
+				return true;
+			} else {
+				for(int i = 2; i<zahl;i++) {
+					if(zahl%i == 0) {
+						return false;
+					} 
+				}
+				return true;
+			} 
+		}
+		return false;
 	}
 }
