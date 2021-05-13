@@ -29,7 +29,6 @@ public class Solution04 extends AbstractSolution {
 					ausgabe = ausgabe + "*" + i;
 				}
 				i=0;
-				//teständerung
 			}
 			
 			
