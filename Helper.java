@@ -21,6 +21,11 @@ public class Helper {
 		} else {
 			z=y-x;
 			z=z*b;
+			double n = z;
+			int m = (int) n;
+			if((double) m!=z) {
+				z += 1;
+			}
 		}
 		ausgabe = Integer.toString((int) z);
 		return ausgabe;
@@ -74,6 +79,12 @@ public class Helper {
 	public String hexToBin(String hex) {
 		String dec = hexToDec(hex);
 		String ausgabe = decToBin(dec);
+		return ausgabe;
+	}
+	
+	public boolean isPrime(int zahl) {
+		boolean ausgabe = false;
+		
 		return ausgabe;
 	}
 }

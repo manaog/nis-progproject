@@ -19,11 +19,19 @@ public class Solution04 extends AbstractSolution {
 	@Override
 	public String run() {
 		String ausgabe = "";
-		
+		int tmp = task.getIntArray(0);
 		for(int i = 0;i<=(task.getIntArray(0)/2); i++) {
+			if(this.isPrime(i)) {
+				
+				if(ausgabe.length()==0) {
+					ausgabe = ausgabe + i;
+				} else {
+					ausgabe = ausgabe + "*" + i;
+				}
+				i=0;
+			}
 			
 			
-			ausgabe = ausgabe + "*" + i;
 		}
 		
 		return ausgabe;
