@@ -19,7 +19,9 @@ public class Solution03 extends AbstractSolution {
 	@Override
 	public String run() {
 		String ausgabe;
+		System.out.println(task.getIntArray(0)+ ", " + task.getIntArray(1));
 		ausgabe = this.mod(task.getIntArray(0), task.getIntArray(1));
+		System.out.println(ausgabe);
 		return ausgabe;
 	}
 

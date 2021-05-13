@@ -18,7 +18,18 @@ public class Solution05 extends AbstractSolution {
 
 	@Override
 	public String run() {
-		return null;
+		char[][] vig = this.fillVig();
+		for(int i=0;i<26;i++) {
+			for(int j=0;j<26;j++) {
+				if(j==0) {
+					System.out.print(vig[i][j]);
+				} else {
+					System.out.print(", " + vig[i][j]);
+				}
+			}
+			System.out.print("\n");
+		}
+		return "false";
 	}
 
 }

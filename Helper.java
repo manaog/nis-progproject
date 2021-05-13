@@ -6,29 +6,108 @@ public class Helper {
 	 * Sie können auch statische Methoden oder Subklassen benutzen.
 	 * Sie können jedoch NICHT die Signatur des Konstruktors verändern.
 	 */
+	
+	
 	public Helper() {
 		
 	}
 	
-	public String mod(int a, int b) {
-		String ausgabe;
-		double z;
-		int x = a/b;
-		double y = (double) a / (double) b;
-		
-		if((double) x==y) {
-			return "0";
-		} else {
-			z=y-x;
-			z=z*b;
-			double n = z;
-			int m = (int) n;
-			if((double) m!=z) {
-				z += 1;
+	public char[][] fillVig() {
+		char[][] vig= new char[26][26];
+		for(int i=0;i<26;i++) {
+			for(int j=0;j<26;j++) {
+				int tmp = i-j;
+				if(tmp<0) {
+					tmp = 25+tmp;
+				}
+				switch(tmp) {
+				case 0:
+					vig[i][j]='A';
+					break;
+				case 1:
+					vig[i][j]='B';
+					break;
+				case 2:
+					vig[i][j]='C';
+					break;
+				case 3:
+					vig[i][j]='D';
+					break;
+				case 4:
+					vig[i][j]='E';
+					break;
+				case 5:
+					vig[i][j]='F';
+					break;
+				case 6:
+					vig[i][j]='G';
+					break;
+				case 7:
+					vig[i][j]='H';
+					break;
+				case 8:
+					vig[i][j]='I';
+					break;
+				case 9:
+					vig[i][j]='J';
+					break;
+				case 10:
+					vig[i][j]='K';
+					break;
+				case 11:
+					vig[i][j]='L';
+					break;
+				case 12:
+					vig[i][j]='M';
+					break;
+				case 13:
+					vig[i][j]='N';
+					break;
+				case 14:
+					vig[i][j]='O';
+					break;
+				case 15:
+					vig[i][j]='P';
+					break;
+				case 16:
+					vig[i][j]='Q';
+					break;
+				case 17:
+					vig[i][j]='R';
+					break;
+				case 18:
+					vig[i][j]='S';
+					break;
+				case 19:
+					vig[i][j]='T';
+					break;
+				case 20:
+					vig[i][j]='U';
+					break;
+				case 21:
+					vig[i][j]='V';
+					break;
+				case 22:
+					vig[i][j]='W';
+					break;
+				case 23:
+					vig[i][j]='X';
+					break;
+				case 24:
+					vig[i][j]='Y';
+					break;
+				case 25:
+					vig[i][j]='Z';
+					break;
+				}
 			}
 		}
-		ausgabe = Integer.toString((int) z);
-		return ausgabe;
+		return vig;
+	}
+	
+	public String mod(int a, int b) {
+		int x = a-(b*(a/b));
+		return Integer.toString(x);
 	}
 	
 	public String hexToDec(String input) {
@@ -82,7 +161,7 @@ public class Helper {
 		return ausgabe;
 	}
 	
-	public static boolean isPrime(int zahl)
+	public boolean isPrime(int zahl)
 	{
 		if(zahl>=2) {
 			if(zahl==2) {
