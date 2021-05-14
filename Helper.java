@@ -16,7 +16,7 @@ public class Helper {
 		char[][] vig= new char[26][26];
 		for(int i=0;i<26;i++) {
 			for(int j=0;j<26;j++) {
-				int tmp = i-j;
+				int tmp = j-i;
 				if(tmp<0) {
 					tmp = 25+tmp;
 				}

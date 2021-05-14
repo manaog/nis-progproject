@@ -29,7 +29,26 @@ public class Solution05 extends AbstractSolution {
 			}
 			System.out.print("\n");
 		}
-		return "false";
+		
+		String output = "";
+		String input = task.getStringArray(0);
+		String key = task.getStringArray(1);
+		
+		for(int l=0;l<input.length();l++) {
+			int h = 0;
+			int v = 0;
+			for(int i=0;i<vig.length();i++) {
+				if(input.getCharAt(l)==vig.getCharAt(i)) {
+					h=i;
+				}
+				if(key.getCharAt(l)==vig.getCharAt(i)) {
+					v=i;
+				}
+			}
+			output = output + vig[h][v];
+		}
+		
+		return output;
 	}
 
 }
