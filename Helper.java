@@ -12,95 +12,174 @@ public class Helper {
 		
 	}
 	
-	public char[][] fillVig() {
-		char[][] vig= new char[26][26];
+	public int vigAt(char input) {
+		int output = 0;
+		switch(input) {
+		case 'A': 
+			output = 0;
+			break;
+		case 'B':
+			output = 1;
+			break;
+		case 'C':
+			output = 2;
+			break;
+		case 'D':
+			output = 3;
+			break;
+		case 'E':
+			output = 4;
+			break;
+		case 'F':
+			output = 5;
+			break;
+		case 'G':
+			output = 6;
+			break;
+		case 'H':
+			output = 7;
+			break;
+		case 'I':
+			output = 8;
+			break;
+		case 'J':
+			output = 9;
+			break;
+		case 'K':
+			output = 10;
+			break;
+		case 'L':
+			output = 11;
+			break;
+		case 'M':
+			output = 12;
+			break;
+		case 'N':
+			output = 13;
+			break;
+		case 'O':
+			output = 14;
+			break;
+		case 'P':
+			output = 15;
+			break;
+		case 'Q':
+			output = 16;
+			break;
+		case 'R':
+			output = 17;
+			break;
+		case 'S':
+			output = 18;
+			break;
+		case 'T':
+			output = 19;
+			break;
+		case 'U':
+			output = 20;
+			break;
+		case 'V':
+			output = 21;
+			break;
+		case 'W':
+			output = 22;
+			break;
+		case 'X':
+			output = 23;
+			break;
+		case 'Y':
+			output = 24;
+			break;
+		case 'Z':
+			output = 25;
+			break;
+		}
+		return output;
+	}
+	
+	public char[] fillVig() {
+		char[] vig= new char[26];
 		for(int i=0;i<26;i++) {
-			for(int j=0;j<26;j++) {
-				int tmp = j-i;
-				if(tmp<0) {
-					tmp = 25+tmp;
-				}
-				switch(tmp) {
+				switch(i) {
 				case 0:
-					vig[i][j]='A';
+					vig[i]='A';
 					break;
 				case 1:
-					vig[i][j]='B';
+					vig[i]='B';
 					break;
 				case 2:
-					vig[i][j]='C';
+					vig[i]='C';
 					break;
 				case 3:
-					vig[i][j]='D';
+					vig[i]='D';
 					break;
 				case 4:
-					vig[i][j]='E';
+					vig[i]='E';
 					break;
 				case 5:
-					vig[i][j]='F';
+					vig[i]='F';
 					break;
 				case 6:
-					vig[i][j]='G';
+					vig[i]='G';
 					break;
 				case 7:
-					vig[i][j]='H';
+					vig[i]='H';
 					break;
 				case 8:
-					vig[i][j]='I';
+					vig[i]='I';
 					break;
 				case 9:
-					vig[i][j]='J';
+					vig[i]='J';
 					break;
 				case 10:
-					vig[i][j]='K';
+					vig[i]='K';
 					break;
 				case 11:
-					vig[i][j]='L';
+					vig[i]='L';
 					break;
 				case 12:
-					vig[i][j]='M';
+					vig[i]='M';
 					break;
 				case 13:
-					vig[i][j]='N';
+					vig[i]='N';
 					break;
 				case 14:
-					vig[i][j]='O';
+					vig[i]='O';
 					break;
 				case 15:
-					vig[i][j]='P';
+					vig[i]='P';
 					break;
 				case 16:
-					vig[i][j]='Q';
+					vig[i]='Q';
 					break;
 				case 17:
-					vig[i][j]='R';
+					vig[i]='R';
 					break;
 				case 18:
-					vig[i][j]='S';
+					vig[i]='S';
 					break;
 				case 19:
-					vig[i][j]='T';
+					vig[i]='T';
 					break;
 				case 20:
-					vig[i][j]='U';
+					vig[i]='U';
 					break;
 				case 21:
-					vig[i][j]='V';
+					vig[i]='V';
 					break;
 				case 22:
-					vig[i][j]='W';
+					vig[i]='W';
 					break;
 				case 23:
-					vig[i][j]='X';
+					vig[i]='X';
 					break;
 				case 24:
-					vig[i][j]='Y';
+					vig[i]='Y';
 					break;
 				case 25:
-					vig[i][j]='Z';
+					vig[i]='Z';
 					break;
 				}
-			}
 		}
 		return vig;
 	}
@@ -161,6 +240,49 @@ public class Helper {
 		return ausgabe;
 	}
 	
+	public String xor(String i1, String i2) {
+ 		String output = "";
+		for(int i = 0; i<i1.length();i++) {
+ 			if(i1.charAt(i) != i2.charAt(i)) {
+ 				output = output + "1";
+ 			} else {
+ 				output = output + "0";
+ 			}
+ 		}
+ 		return output;
+	}
+	
+	public String pc1(String input) {
+		String output = "";
+		System.out.println(input);		
+		for(int i=57;i>0;i=i-8) {
+			output = output + input.charAt(i);
+		}	
+		for(int i=58;i>0;i=i-8) {
+			output = output + input.charAt(i);
+		}
+		for(int i=59;i>0;i=i-8) {
+			output = output + input.charAt(i);
+		}
+		for(int i=60;i>30;i=i-8) {
+			output = output + input.charAt(i);
+		}
+		for(int i=61;i>0;i=i-8) {
+			output = output + input.charAt(i);
+		}
+		for(int i=62;i>0;i=i-8) {
+			output = output + input.charAt(i);
+		}
+		for(int i=63;i>0;i=i-8) {
+			output = output + input.charAt(i);
+		}
+		for(int i=28;i>0;i=i-8) {
+			output = output + input.charAt(i);
+		}
+		System.out.println(output);
+		return output;
+	}
+	
 	public boolean isPrime(int zahl)
 	{
 		if(zahl>=2) {
@@ -168,7 +290,7 @@ public class Helper {
 				return true;
 			} else {
 				for(int i = 2; i<zahl;i++) {
-					if(zahl%i == 0) {
+					if(Integer.valueOf(this.mod(zahl, i)) == 0) {
 						return false;
 					} 
 				}

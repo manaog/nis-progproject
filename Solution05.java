@@ -18,37 +18,21 @@ public class Solution05 extends AbstractSolution {
 
 	@Override
 	public String run() {
-		char[][] vig = this.fillVig();
-		for(int i=0;i<26;i++) {
-			for(int j=0;j<26;j++) {
-				if(j==0) {
-					System.out.print(vig[i][j]);
-				} else {
-					System.out.print(", " + vig[i][j]);
-				}
-			}
-			System.out.print("\n");
-		}
-		
+		char[] vig = this.fillVig();
 		String output = "";
 		String input = task.getStringArray(0);
 		String key = task.getStringArray(1);
-		
-		for(int l=0;l<input.length();l++) {
-			int h = 0;
-			int v = 0;
-			for(int i=0;i<vig.length();i++) {
-				if(input.getCharAt(l)==vig.getCharAt(i)) {
-					h=i;
-				}
-				if(key.getCharAt(l)==vig.getCharAt(i)) {
-					v=i;
-				}
+		for(int i=0;i<input.length();i++) {
+			char ktmp = key.toUpperCase().charAt(i%key.length());
+			int kint= this.vigAt(ktmp);
+			int iint= this.vigAt(input.toUpperCase().charAt(i));
+			int oint= iint-kint;
+			if(oint<0) {
+				oint += 26;
 			}
-			output = output + vig[h][v];
+			output = output + vig[oint];
 		}
-		
 		return output;
 	}
-
+	
 }
