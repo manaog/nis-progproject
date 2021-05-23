@@ -22,7 +22,7 @@ public class Solution04 extends AbstractSolution {
 		int tmp = task.getIntArray(0);
 		for(int i = 0;i<=(task.getIntArray(0)/2); i++) {
 			if(this.isPrime(i)) {
-				if(tmp%i==0) {
+				if(Integer.parseInt(this.mod(tmp, i))==0) {
 					if(ausgabe.length()==0) {
 						ausgabe = ausgabe + i;
 					} else {
@@ -35,7 +35,9 @@ public class Solution04 extends AbstractSolution {
 			
 			
 		}
-		
+		if(ausgabe.length()==0) {
+			return Integer.toString(task.getIntArray(0));
+		}
 		return ausgabe;
 	}
 

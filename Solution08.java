@@ -18,7 +18,26 @@ public class Solution08 extends AbstractSolution {
 
 	@Override
 	public String run() {
-		return null;
+		String k=task.getStringArray(1);
+		String input=task.getStringArray(0);
+		
+		String l="";
+		String r="";
+		
+		for(int i = 0; i<32;i++) {
+			l=l+input.charAt(i);
+			r=r+input.charAt(i+32);
+		}
+		
+		r=this.desExpansion(r);
+		
+		r=this.xor(k, r);
+		
+		r=this.desSBlock(r);
+		
+		r=this.desPermutationP(r);
+		
+		return this.xor(l, r);
 	}
 
 }

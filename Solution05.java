@@ -23,7 +23,7 @@ public class Solution05 extends AbstractSolution {
 		String input = task.getStringArray(0);
 		String key = task.getStringArray(1);
 		for(int i=0;i<input.length();i++) {
-			char ktmp = key.toUpperCase().charAt(i%key.length());
+			char ktmp = key.toUpperCase().charAt(Integer.parseInt(this.mod(i, key.length())));
 			int kint= this.vigAt(ktmp);
 			int iint= this.vigAt(input.toUpperCase().charAt(i));
 			int oint= iint-kint;

@@ -19,8 +19,6 @@ public class Solution02 extends AbstractSolution {
 	@Override
 	public String run() {
 		
- 		String ausgabe= "";
-		
  		String a = task.getStringArray(0);
  		String b = task.getStringArray(1);
  		
@@ -39,15 +37,7 @@ public class Solution02 extends AbstractSolution {
  			}
  		}
  		
- 		for(int i = 0; i<a.length();i++) {
- 			if(a.charAt(i) != b.charAt(i)) {
- 				ausgabe = ausgabe + "1";
- 			} else {
- 				ausgabe = ausgabe + "0";
- 			}
- 		}
- 		
-		return ausgabe;		
+ 		return this.xor(a, b);		
 		
 	}
 

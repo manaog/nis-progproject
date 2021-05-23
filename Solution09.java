@@ -21,7 +21,19 @@ public class Solution09 extends AbstractSolution {
 
 	@Override
 	public String run() {
-		return null;
+		String l=task.getStringArray(0);
+		String r=task.getStringArray(1);
+		String k=task.getStringArray(2);
+		int round=task.getIntArray(0);
+		
+		
+		k=this.desPC1(k);
+		for(int i = 1;i<=round;i++) {
+			k=this.desKeySchedule(k, i);
+		}
+		k=this.desPC2(k);
+		
+		return this.desFeistel(l,r,k);
 	}
 
 }
